@@ -64,14 +64,6 @@ export class MyRedditComponent implements OnInit {
   }
 
   public fetchcomment(redditcomment: string){
-//     let navigationExtras: NavigationExtras = {
-//       queryParams: {
-//         "commentid": redditcomment,
-//         preserveQueryParams: true
-//     }
-// };
-    //this.route.navigateByUrl('/home');
-    //console.log(redditcomment);
-    this.route.navigate(['home', redditcomment]); 
+    this.route.navigate(['redditcomment', redditcomment]); 
   }
 }
