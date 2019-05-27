@@ -28,12 +28,19 @@
   }" (pageChange)="pageChange($event)">
     <kendo-grid-column field="title" title="Title" width="250">
     </kendo-grid-column>
-    <kendo-grid-column field="permalink" title="URL" width="250">
+    <kendo-grid-column field="permalink" title="URL(permalink)" width="250">
       <ng-template kendoGridCellTemplate let-dataItem>
         <a style="color: blue" [routerLink]="" (click)="fetchcomment(dataItem.permalink)">{{dataItem.permalink}}</a>
       </ng-template>
     </kendo-grid-column>
     <kendo-grid-column field="score" title="Score" width="80">
+    </kendo-grid-column>
+    <kendo-grid-column field="thumbnail" title="Thumbnail" width="80">
+    </kendo-grid-column>
+    <kendo-grid-column field="created" title="Created" width="80">
+        <ng-template kendoGridCellTemplate let-dataItem>
+            {{ dataItem.created * 1000 | date:'yyyy-MM-dd' }}
+        </ng-template>
     </kendo-grid-column>
     <kendo-grid-column field="author" title="Author" width="80">
     </kendo-grid-column>
