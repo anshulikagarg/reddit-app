@@ -16,7 +16,6 @@ export class RedditCommentComponent implements OnInit {
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
-      console.log(params)
       this.id = params['id'];
       this.data.fetchComment(this.id).subscribe(
         posts => {
